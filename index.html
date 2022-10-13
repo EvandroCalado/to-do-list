@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/a292dabd64.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- === Modal Editar === -->
+    <div class="edit-task-modal">
+      <div class="edit-task-container">
+        <input type="text" class="edit-task-input" />
+        <i class="fa-solid fa-check"></i>
+        <i class="fa-solid fa-x"></i>
+      </div>
+    </div>
+    <!-- === Container Nova Tarefa -->
+    <div class="container">
+      <div class="new-task-container">
+        <input
+          type="text"
+          class="new-task-input"
+          placeholder="Digite uma terefa ..."
+        />
+        <button class="new-task-button" id="btn">Adicionar</button>
+      </div>
+      <!-- === Tarefas === -->
+      <div class="tasks-container"></div>
+    </div>
+  </body>
+</html>

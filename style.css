@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --color-primary: #1e728e;
+  --color-secondary: #fff;
+  --hover: #195d74;
+  --sombra: 2px 4px 8px #0202024b;
+
+  --font: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  === Modal Editar === */
+.edit-task-modal {
+  background-color: #00000052;
+  backdrop-filter: blur(3px);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.edit-task-container {
+  position: relative;
+  background-color: var(--color-secondary);
+  height: 15%;
+  min-width: 40%;
+  max-width: 60%;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-task-container::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  background-color: var(--color-secondary);
+  bottom: -8px;
+  left: 20px;
+  transform: rotate(45deg);
+}
+
+.edit-task-input {
+  flex: 3;
+  font-size: 1rem;
+  border: 2px solid #d1d3d4;
+  border-radius: 5px;
+  padding: 5.5px;
+  font-weight: 500;
+  outline: none;
+  margin: 5px;
+  caret-color: var(--color-primary);
+}
+
+.edit-task-input:focus {
+  border-color: var(--color-primary);
+}
+
+.edit-task-container i {
+  height: 40px;
+  width: 40px;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 12px;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.edit-task-container i:hover {
+  background-color: var(--hover);
+}
+
+/* === Lista de Tarefas === */
+.container {
+  padding: 30px 40px;
+  min-width: 40%;
+  max-width: 60%;
+}
+
+.new-task-container {
+  background-color: var(--color-secondary);
+  padding: 30px 20px;
+  border-radius: 5px;
+  box-shadow: var(--sombra);
+  display: flex;
+}
+
+.new-task-container input {
+  flex: 3;
+  font-size: 1rem;
+  border: 2px solid #d1d3d4;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 500;
+  outline: none;
+  caret-color: var(--color-primary);
+}
+
+.new-task-container input:focus {
+  border-color: var(--color-primary);
+}
+
+.new-task-button {
+  flex: 1;
+  border-radius: 5px;
+  font-weight: 500;
+  height: 100%;
+  font-size: 1rem;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 12px;
+  margin-left: 12px;
+  cursor: pointer;
+  transition: 200ms linear;
+}
+
+.new-task-button:hover {
+  background-color: var(--hover);
+}
+
+.tasks-container {
+  display: none;
+  background-color: transparent;
+  margin-top: 20px;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.task-item {
+  height: 80px;
+  position: relative;
+  background-color: var(--color-secondary);
+  display: flex;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  transition: 500ms linear;
+  box-shadow: var(--sombra);
+}
+
+.task-item::before {
+  position: absolute;
+  content: "";
+  top: -8px;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-secondary);
+  transform: rotate(45deg);
+}
+
+.task-item i {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  height: 40px;
+  width: 40px;
+  padding: 12px;
+  margin: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-item i:hover {
+  background-color: var(--hover);
+}
+
+.fa-pen-to-square {
+  position: absolute;
+  right: 45px;
+}
+
+.task-item p {
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+/* Utilities */
+
+.delete {
+  transform: translateY(80px);
+  opacity: 0;
+}
+
+.error {
+  border: 2px solid red !important;
+}
+
+.error::placeholder {
+  color: red;
+}
+
+.completed {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+
+.completed-2 {
+  opacity: 0.5;
+}
