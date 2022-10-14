@@ -3,8 +3,13 @@
 :root {
   --color-primary: #1e728e;
   --color-secondary: #fff;
-  --hover: #195d74;
-  --sombra: 2px 4px 8px #0202024b;
+  --color-done: #35cd8c;
+  --color-done-hover: #32c284;
+  --color-cancel: #fe043c;
+  --color-cancel-hover: #a70428;
+  --color-edit: #d2691e;
+  --color-edit-hover: #b15616;
+  --shadow: 2px 4px 8px #0202024b;
 
   --font: "Poppins", sans-serif;
 }
@@ -83,7 +88,6 @@ body {
 .edit-task-container i {
   height: 40px;
   width: 40px;
-  background-color: var(--color-primary);
   color: var(--color-secondary);
   padding: 12px;
   margin-right: 5px;
@@ -92,8 +96,22 @@ body {
   text-align: center;
 }
 
-.edit-task-container i:hover {
-  background-color: var(--hover);
+.edit-task-container i.fa-check {
+  background-color: var(--color-done);
+  transition: 200ms linear;
+}
+
+.edit-task-container i.fa-check:hover {
+  background-color: var(--color-done-hover);
+}
+
+.edit-task-container i.fa-x {
+  background-color: var(--color-cancel);
+  transition: 200ms linear;
+}
+
+.edit-task-container i.fa-x:hover {
+  background-color: var(--color-cancel-hover);
 }
 
 /* === Lista de Tarefas === */
@@ -107,7 +125,7 @@ body {
   background-color: var(--color-secondary);
   padding: 30px 20px;
   border-radius: 5px;
-  box-shadow: var(--sombra);
+  box-shadow: var(--shadow);
   display: flex;
 }
 
@@ -119,11 +137,11 @@ body {
   padding: 10px;
   font-weight: 500;
   outline: none;
-  caret-color: var(--color-primary);
+  caret-color: var(--color-done);
 }
 
 .new-task-container input:focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-done);
 }
 
 .new-task-button {
@@ -133,7 +151,7 @@ body {
   height: 100%;
   font-size: 1rem;
   border: none;
-  background-color: var(--color-primary);
+  background-color: var(--color-done);
   color: var(--color-secondary);
   padding: 12px;
   margin-left: 12px;
@@ -142,7 +160,7 @@ body {
 }
 
 .new-task-button:hover {
-  background-color: var(--hover);
+  background-color: var(--color-done-hover);
 }
 
 .tasks-container {
@@ -163,7 +181,7 @@ body {
   align-items: center;
   margin: 20px 0;
   transition: 500ms linear;
-  box-shadow: var(--sombra);
+  box-shadow: var(--shadow);
 }
 
 .task-item::before {
@@ -178,7 +196,6 @@ body {
 }
 
 .task-item i {
-  background-color: var(--color-primary);
   color: var(--color-secondary);
   height: 40px;
   width: 40px;
@@ -188,8 +205,22 @@ body {
   cursor: pointer;
 }
 
-.task-item i:hover {
-  background-color: var(--hover);
+.task-item i.fa-pen-to-square {
+  background-color: var(--color-edit);
+  transition: 200ms linear;
+}
+
+.task-item i.fa-pen-to-square:hover {
+  background-color: var(--color-edit-hover);
+}
+
+.task-item i.fa-trash-alt {
+  background-color: var(--color-cancel);
+  transition: 200ms linear;
+}
+
+.task-item i.fa-trash-alt:hover {
+  background-color: var(--color-cancel-hover);
 }
 
 .fa-pen-to-square {
@@ -210,16 +241,16 @@ body {
 }
 
 .error {
-  border: 2px solid red !important;
+  border: 2px solid var(--color-cancel) !important;
 }
 
 .error::placeholder {
-  color: red;
+  color: var(--color-cancel);
 }
 
 .completed {
   text-decoration: line-through;
-  text-decoration-color: red;
+  text-decoration-color: var(--color-cancel);
 }
 
 .completed-2 {
